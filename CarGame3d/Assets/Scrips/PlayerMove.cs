@@ -9,6 +9,8 @@ public class PlayerMove : MonoBehaviour
     public float divideSpeed;
     public float rotationspeed;
     public bool canMove;
+    private MeshRenderer meshRenderer;
+    private Collider collideR;
     public static PlayerMove instance;
     public static List<PlayerMove> all;
     private void Awake()
@@ -23,6 +25,11 @@ public class PlayerMove : MonoBehaviour
     private void OnDisable()
     {
         all.Remove(this);
+    }
+    void Start()
+    {
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
+        collideR = GetComponentInChildren<Collider>();
     }
     void Update()
     {
@@ -52,8 +59,8 @@ public class PlayerMove : MonoBehaviour
     }
     public void SetComponents(bool enable)  //to prepare car to game(to make it visible)
     {
-        GetComponentInChildren<MeshRenderer>().enabled = enable;
-        GetComponentInChildren<Collider>().enabled = enable;
+        meshRenderer.enabled = enable;
+        collideR.enabled = enable;
     }
     public void CanWeMove(bool move)
     {

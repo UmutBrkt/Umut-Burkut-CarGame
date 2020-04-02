@@ -10,7 +10,7 @@ public class TargetTrigger : MonoBehaviour
         {
             GameManager.instance.NextCar();
             other.tag = "Dead";
-            other.GetComponent<Collider>().isTrigger = true;
+            other.isTrigger = true;
         }
 
     }
