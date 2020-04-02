@@ -1,0 +1,7 @@
+To design a new level you have all assets you need in Assets/Prefab.
+Delete existing camera in the new scene and add Main Camera prefab from same folder.
+Move players(cars) out of camera view
+After you finish with your level design all you need to do for functionality is assign ;
+Enterance-Target-Timer text and PlayButton to GameManager script 
+which attached to GameManager game object. Assign Gamme manager object to Playbutton's onClick and select PlayGame() function
+And press play to enjoy..
