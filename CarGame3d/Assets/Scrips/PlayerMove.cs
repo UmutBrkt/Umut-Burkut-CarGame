@@ -18,6 +18,8 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        meshRenderer = GetComponentInChildren<MeshRenderer>();
+        collideR = GetComponentInChildren<Collider>();
     }
     private void OnEnable()
     {
@@ -27,11 +29,6 @@ public class PlayerMove : MonoBehaviour
     private void OnDisable()
     {
         all.Remove(this);
-    }
-    void Start()
-    {
-        meshRenderer = GetComponentInChildren<MeshRenderer>();
-        collideR = GetComponentInChildren<Collider>();
     }
     void Update()
     {
