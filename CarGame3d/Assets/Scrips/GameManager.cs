@@ -49,13 +49,13 @@ public class GameManager : MonoBehaviour
             ReTry();
         }
     }
-    public void PlayGame() //Starts time and controls
+    public void PlayGame() //Starts time and controls (PlayButton onClick())
     {
         playButton.SetActive(false);
         Time.timeScale = 1;
         players[index].CanWeMove(true);
     }
-    public void NextCar()//When reache to target changes car/enterance/target
+    public void NextCar()//When reach to target changes car/enterance/target
     {
         int playersLength = players.Length;
         players[index].CanWeMove(false);
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
     void StartMove()//prepares scene to next step
     {
         int playersLength = players.Length;
-        if (index == playersLength)
+        if (index == playersLength) //check if there is any other car left, if not load next level
         {
             SceneManager.LoadScene(nextSceneIndex);
             index = 0;
@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
         players[index].transform.position = enterance.transform.position;
         players[index].transform.rotation = enterance.transform.rotation;
     }
-    void ChangeEnterance() //called after player reached target
+    void ChangeEnterance() //called after player reached target to change car's spawn point
     {
         enterance.transform.position = enterancePoints[index].transform.position;
         enterance.transform.rotation = enterancePoints[index].transform.rotation;

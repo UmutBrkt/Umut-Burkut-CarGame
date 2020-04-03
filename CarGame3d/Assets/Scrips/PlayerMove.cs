@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    #region vars
     bool rightTurn;
     bool leftTurn;
     public float divideSpeed;
-    public float rotationspeed;
+    public float rotationSpeed;
     public bool canMove;
     private MeshRenderer meshRenderer;
     private Collider collideR;
     public static PlayerMove instance;
     public static List<PlayerMove> all;
+    #endregion
     private void Awake()
     {
         instance = this;
@@ -40,20 +42,20 @@ public class PlayerMove : MonoBehaviour
             //// To test on PC
             if (Input.GetKey(KeyCode.RightArrow))
             {
-                transform.Rotate(Vector3.up * (rotationspeed * Time.deltaTime));
+                transform.Rotate(Vector3.up * (rotationSpeed * Time.deltaTime));
             }
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.Rotate(Vector3.down * (rotationspeed * Time.deltaTime));
+                transform.Rotate(Vector3.down * (rotationSpeed * Time.deltaTime));
             }
             ////
             if (rightTurn)
             {
-                transform.Rotate(Vector3.up * (rotationspeed * Time.deltaTime));
+                transform.Rotate(Vector3.up * (rotationSpeed * Time.deltaTime));
             }
             if (leftTurn)
             {
-                transform.Rotate(Vector3.down * (rotationspeed * Time.deltaTime));
+                transform.Rotate(Vector3.down * (rotationSpeed * Time.deltaTime));
             }
         }
     }
