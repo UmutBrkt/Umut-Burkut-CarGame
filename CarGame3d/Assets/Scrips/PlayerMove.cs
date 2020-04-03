@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    #region vars
+    
     bool rightTurn;
     bool leftTurn;
     public float divideSpeed;
@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour
     private Collider collideR;
     public static PlayerMove instance;
     public static List<PlayerMove> all;
-    #endregion
+   
     private void Awake()
     {
         instance = this;
