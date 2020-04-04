@@ -11,9 +11,12 @@ public class GameManager : MonoBehaviour
     PlayerMove[] players;
     TargetPoints[] targetPoints;
     EnterancePoint[] enterancePoints;
-    public GameObject enterance;
-    public GameObject target;
-    public GameObject playButton;
+    [SerializeField]
+    private GameObject enterance;
+    [SerializeField]
+    private GameObject target;
+    [SerializeField]
+    private GameObject playButton;
     public Text timerTxt;
     public float time;
     public float resetTime;
